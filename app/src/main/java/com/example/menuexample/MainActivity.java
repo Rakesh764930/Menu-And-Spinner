@@ -3,6 +3,7 @@ package com.example.menuexample;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.service.autofill.OnClickAction;
 import android.util.Log;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.PopupMenu;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener, View.OnClickListener {
@@ -25,6 +27,7 @@ Button button1;
         button1=findViewById(R.id.button1);
         registerForContextMenu(button1);
         button1.setOnClickListener(this);
+
     }
 
 
@@ -39,6 +42,8 @@ Button button1;
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             case R.id.action_add:
+                Intent mIntent=new Intent(MainActivity.this, Pickeractivity.class);
+                startActivity(mIntent);
                 Toast.makeText(MainActivity.this, "add",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.action_edit:
@@ -64,6 +69,7 @@ Button button1;
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             case R.id.action_add:
+
                 Toast.makeText(MainActivity.this,"add",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.action_edit:
