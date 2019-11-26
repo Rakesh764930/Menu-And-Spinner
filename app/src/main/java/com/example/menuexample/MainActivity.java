@@ -39,7 +39,7 @@ Button button1;
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             case R.id.action_add:
-                Toast.makeText(MainActivity.this,"add",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "add",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.action_edit:
                 Toast.makeText(MainActivity.this,"edit",Toast.LENGTH_SHORT).show();
